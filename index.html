@@ -1,0 +1,89 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8"/>
+    <style>
+    canvas {
+        border:1px solid #d3d3d3;
+        margin-left: 85px;
+        margin-top: 85px;
+    }
+    p {
+        margin-left: 100px;
+    }
+    </style>
+</head>
+<body>
+    <canvas id="game" width="910" height="410"></canvas>
+
+    <div style="display:none;">
+        <img id="board" src="assets/board2.png" width="910" height="410">
+        <img id="a01" src="assets/01a.png" width="90" height="90">
+        <img id="b01" src="assets/01b.png" width="90" height="90">
+        <img id="c01" src="assets/01c.png" width="90" height="90">
+        <img id="d01" src="assets/01d.png" width="90" height="90">
+        <img id="a02" src="assets/02a.png" width="90" height="90">
+        <img id="b02" src="assets/02b.png" width="90" height="90">
+        <img id="c02" src="assets/02c.png" width="90" height="90">
+        <img id="d02" src="assets/02d.png" width="90" height="90">
+        <img id="a03" src="assets/03a.png" width="90" height="90">
+        <img id="b03" src="assets/03b.png" width="90" height="90">
+        <img id="c03" src="assets/03c.png" width="90" height="90">
+        <img id="d03" src="assets/03d.png" width="90" height="90">
+        <img id="a04" src="assets/04a.png" width="90" height="90">
+        <img id="b04" src="assets/04b.png" width="90" height="90">
+        <img id="c04" src="assets/04c.png" width="90" height="90">
+        <img id="d04" src="assets/04d.png" width="90" height="90">
+        <img id="a05" src="assets/05a.png" width="90" height="90">
+        <img id="b05" src="assets/05b.png" width="90" height="90">
+        <img id="c05" src="assets/05c.png" width="90" height="90">
+        <img id="d05" src="assets/05d.png" width="90" height="90">
+        <img id="a06" src="assets/06a.png" width="90" height="90">
+        <img id="b06" src="assets/06b.png" width="90" height="90">
+        <img id="c06" src="assets/06c.png" width="90" height="90">
+        <img id="d06" src="assets/06d.png" width="90" height="90">
+        <img id="a07" src="assets/07a.png" width="90" height="90">
+        <img id="b07" src="assets/07b.png" width="90" height="90">
+        <img id="c07" src="assets/07c.png" width="90" height="90">
+        <img id="d07" src="assets/07d.png" width="90" height="90">
+        <img id="a08" src="assets/08a.png" width="90" height="90">
+        <img id="b08" src="assets/08b.png" width="90" height="90">
+        <img id="c08" src="assets/08c.png" width="90" height="90">
+        <img id="d08" src="assets/08d.png" width="90" height="90">
+        <img id="a09" src="assets/09a.png" width="90" height="90">
+        <img id="b09" src="assets/09b.png" width="90" height="90">
+        <img id="c09" src="assets/09c.png" width="90" height="90">
+        <img id="d09" src="assets/09d.png" width="90" height="90">
+        <img id="a10" src="assets/10a.png" width="90" height="90">
+        <img id="b10" src="assets/10b.png" width="90" height="90">
+        <img id="c10" src="assets/10c.png" width="90" height="90">
+        <img id="d10" src="assets/10d.png" width="90" height="90">
+        <img id="a11" src="assets/11a.png" width="90" height="90">
+        <img id="b11" src="assets/11b.png" width="90" height="90">
+        <img id="c11" src="assets/11c.png" width="90" height="90">
+        <img id="d11" src="assets/11d.png" width="90" height="90">
+        <img id="a12" src="assets/12a.png" width="90" height="90">
+        <img id="b12" src="assets/12b.png" width="90" height="90">
+        <img id="c12" src="assets/12c.png" width="90" height="90">
+        <img id="d12" src="assets/12d.png" width="90" height="90">
+        <img id="a13" src="assets/13a.png" width="90" height="90">
+        <img id="b13" src="assets/13b.png" width="90" height="90">
+        <img id="c13" src="assets/13c.png" width="90" height="90">
+        <img id="d13" src="assets/13d.png" width="90" height="90">
+        <img id="a14" src="assets/14a.png" width="90" height="90">
+        <img id="b14" src="assets/14b.png" width="90" height="90">
+        <img id="c14" src="assets/14c.png" width="90" height="90">
+        <img id="d14" src="assets/14d.png" width="90" height="90">
+        <img id="a15" src="assets/15a.png" width="90" height="90">
+        <img id="b15" src="assets/15b.png" width="90" height="90">
+        <img id="c15" src="assets/15c.png" width="90" height="90">
+        <img id="d15" src="assets/15d.png" width="90" height="90">
+        <img id="a16" src="assets/16a.png" width="90" height="90">
+        <img id="b16" src="assets/16b.png" width="90" height="90">
+        <img id="c16" src="assets/16c.png" width="90" height="90">
+        <img id="d16" src="assets/16d.png" width="90" height="90">
+    </div>
+
+    <p>The aim of the game is to move the pieces from their 'home' position on the righthand side of the board onto the playing area,<br>the grid on the left, in such a way that where the side of a piece is next to the side of another piece, the two sides match.<br><br>A match is a long bar next to a short bar of the same colour.<br><br>The pieces can be rotated while they are on the right but not once they have been moved.<br><br>To rotate a piece, click in the top left corner of the piece.<br><br>To move a piece click on the centre of the piece then click in an empty square on the grid.<br><br>To remove a piece from the grid, click on it to return it to its home.</p>
+
+    <script src='./script'></script>
+</body>
