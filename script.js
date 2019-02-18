@@ -174,3 +174,5 @@ function validate() {
 return (vld);
 
 }
+
+window.onload = draw();
