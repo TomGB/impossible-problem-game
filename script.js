@@ -175,4 +175,4 @@ return (vld);
 
 }
 
-window.onload = draw();
+window.onload = draw
